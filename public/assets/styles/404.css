@@ -1,12 +1,83 @@
-body:has(.error-wrapper){
+body:has(.error-wrapper) {
   background-color: #F9F2D4;
+    min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+    display: grid;
+    place-items: center;
+
+    /* @media (min-width: 900px){
+      min-height: calc(100dvh - 115px); /* 115px = de hoogte van de header */
+    
+  }
+
+  .page-header {
+    background-color: transparent;
+  }
+
+  .wishlist,
+  .account {
+   background-color: white;
+  }
 }
 
-body:has(.error-wrapper) .page-header {
-  background-color: transparent;
-}
+.error-wrapper {
+  display: grid;
+  grid-template-areas: 
+    "img  h1"
+    "img  uhoh"
+    "img  code"
+    "img  a"
+  ;
 
-body:has(.error-wrapper) .wishlist,
-body:has(.error-wrapper) .account {
-  background-color: white;
+  img { 
+    grid-area: img;
+    margin-right: 2rem;
+    width: 8rem;
+    height: auto;
+    align-self: center;
+  }
+
+  h1 {
+    grid-area: h1;
+    font-size: 16px;
+    font-weight: 500;
+    color: #898A8D;
+  }
+
+  .error-uhoh {
+    grid-area: uhoh;
+    font-size: 40px;
+    font-weight: 500;
+    color: black;
+  }
+
+  .error-code {
+    grid-area: code;
+    font-size: 40px;
+    font-weight: 500;
+    color: black;
+  }
+
+  a {
+    grid-area: a;
+    width: 10rem;
+    padding: .7rem;
+    background-color: #997700;
+    text-decoration: unset;
+    color: black;
+    text-align: center;
+    place-items: center;
+    display: grid;
+    margin-top: 1.5rem;
+
+    @media (min-width: 900px) {
+      width: 260px;
+      height: 57px;
+      padding: 11px 18px 11px 18px;
+    }
+  }
 }
