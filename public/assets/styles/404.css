@@ -40,6 +40,12 @@ body:has(.error-wrapper) {
     width: 8rem;
     height: auto;
     align-self: center;
+
+    @media (min-width: 900px) {
+      width: 17rem;
+      margin-right: 8rem;
+      margin-left: -8rem;
+    }
   }
 
   h1 {
@@ -47,13 +53,23 @@ body:has(.error-wrapper) {
     font-size: 16px;
     font-weight: 500;
     color: #898A8D;
+    line-height: 2.3;
+
+    @media (min-width: 900px) {
+      font-size: 20px;
+    }
   }
 
   .error-uhoh {
     grid-area: uhoh;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 500;
     color: black;
+    line-height: 1;
+
+    @media (min-width: 900px) {
+      font-size: 75px;
+    }
   }
 
   .error-code {
@@ -61,24 +77,36 @@ body:has(.error-wrapper) {
     font-size: 40px;
     font-weight: 500;
     color: black;
+    line-height: 1;
+
+    @media (min-width: 900px) {
+      font-size: 70px;
+    }
   }
 
   a {
     grid-area: a;
     width: 10rem;
-    padding: .7rem;
+    padding: .5rem;
     background-color: #997700;
     text-decoration: unset;
     color: black;
     text-align: center;
     place-items: center;
-    display: grid;
+    display: flex;
     margin-top: 1.5rem;
 
     @media (min-width: 900px) {
-      width: 260px;
-      height: 57px;
-      padding: 11px 18px 11px 18px;
+      width: 180px;
+      height: 55px;
+      font-size: 16px;
+
+      &:hover {
+        background-color: white;
+        color: #997700;
+        transition: ease-in-out .3s;
+        box-shadow: 0px 2px 8px 0px rgba(0 0 0 / 15%);
+      }
     }
   }
 }
