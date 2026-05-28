@@ -1,0 +1,12 @@
+body:has(.error-wrapper){
+  background-color: #F9F2D4;
+}
+
+body:has(.error-wrapper) .page-header {
+  background-color: transparent;
+}
+
+body:has(.error-wrapper) .wishlist,
+body:has(.error-wrapper) .account {
+  background-color: white;
+}

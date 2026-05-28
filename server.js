@@ -45,7 +45,7 @@ app.get("/", async function (request, response) {
   // Alleen de lijst met producten uit API
   const productData = productResponseJSON.data;
 
-  response.render("404.liquid", {
+  response.render("index.liquid", {
     products: productData,
   });
 });
@@ -86,6 +86,10 @@ app.get("/gifts/:tags", async function (req, res) {
   res.render("index.liquid", {
     products: productResponseJSON.data,
   });
+});
+
+app.use(function (req, res) {
+  res.status(404).render("404.liquid");
 });
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
