@@ -403,6 +403,28 @@ main {
     }
   }
 }
+
+/* ERROR VIEW TRANSITION (Ahlam) */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: 0.4s ease-in both fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 0.4s ease-out both fade-in;
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
 /* FOOTER (Maarten) */
 .news-letter {
   background-color: #466ebf;

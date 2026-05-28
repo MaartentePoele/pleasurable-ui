@@ -89,7 +89,7 @@ app.get("/gifts/:tags", async function (req, res) {
 });
 
 app.use(function (req, res) {
-  res.status(404).render("404.liquid");
+  res.render("404.liquid");
 });
 
 // Stel het poortnummer in waar Express op moet gaan luisteren

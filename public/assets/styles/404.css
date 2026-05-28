@@ -1,17 +1,17 @@
+@view-transition {
+  navigation: auto;
+}
+
 body:has(.error-wrapper) {
   background-color: #F9F2D4;
-    min-height: 100dvh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 
   main {
     flex: 1;
     display: grid;
-    place-items: center;
-
-    /* @media (min-width: 900px){
-      min-height: calc(100dvh - 115px); /* 115px = de hoogte van de header */
-    
+    place-items: center;    
   }
 
   .page-header {
