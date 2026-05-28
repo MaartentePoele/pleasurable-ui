@@ -45,7 +45,7 @@ app.get("/", async function (request, response) {
   // Alleen de lijst met producten uit API
   const productData = productResponseJSON.data;
 
-  response.render("index.liquid", {
+  response.render("404.liquid", {
     products: productData,
   });
 });
