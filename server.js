@@ -48,7 +48,9 @@ app.get("/spotters", async function (request, response){
   )
   const spottersResponseJson = await spottersResponse.json();
   response.render("spotters.liquid",{
-      spotters: spottersResponseJson.data
+      spotters: spottersResponseJson.data,
+      status: request.query.status
+
 })
 });
 
@@ -72,7 +74,7 @@ app.post("/spotters", async function (request, response){
   );
 
 
-  response.redirect("/spotters")
+  response.redirect("/spotters?status=succes")
 });
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80

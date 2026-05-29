@@ -247,25 +247,29 @@ h1{
   
 }
 .container{
-     display: flex; /* Maakt een flexbox container */
-     flex-direction: column;
+  display: flex; 
+  flex-direction: column;
   justify-content: center; /* Centreert horizontaal */
   align-items: center; /* Centreert verticaal */
   line-height: 1.6;
 }
-.intro-spotters{
+.beschrijving-spotters{
   padding-bottom: 50px;
   text-align: center;
-  width: 50ch;
-   
+  width: clamp(15rem, 7.8251rem + 35.8744vw, 25rem);
+}
+.spotter-aangemeld{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .titel{
   text-align: center;
 }
 .meldaan-tekst{
   text-align: center;
-    width: 50ch;
-margin-bottom: 25px;
+  width: clamp(15rem, 7.8251rem + 35.8744vw, 25rem);
+  margin-bottom: 25px;
 }
 .container{
   margin-bottom: 50px;
@@ -296,18 +300,40 @@ margin-bottom: 25px;
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(4, 250px);
-    /* 3 kaarten komen hierdoor naast elkaar te staan*/
+    /* 4 kaarten komen hierdoor naast elkaar te staan*/
     gap: 40px;
   }
 }
 
+.succes{
+  position: fixed;
+  top: 128px; 
+  left:50%;
+  transform: translateX(-50%);
+  background-color: green;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  z-index: 1000;
+ animation:popup 2s forwards;
+}
+
+@keyframes popup{
+  0%,100%{
+    opacity: 0;
+  }
+
+  10%,90%{
+    opacity: 1;
+  }
+}
 .popup-aanmelden{
 display: none;
 border-radius: 15px;
 border: 2px solid #997700;
 padding: 40px; /* ruimte binnen de popup */
 width: 500px;
-padding: 50px 40px;
+padding: 20px 30px; /*h b*/
 
 &.open{
 display: block;
