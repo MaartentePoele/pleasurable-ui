@@ -63,6 +63,30 @@ app.get("/cadeau-overzicht", async function (request, response) {
   response.render("cadeau.liquid");
 });
 
+
+app.get('/detail/:slug', async (req, res) => {
+  const slug = req.params.slug
+
+  try {
+    const result = await fetch(
+      `https://fdnd-agency.directus.app/items/milledoni_products?filter[slug][_eq]=${encodeURIComponent(slug)}`
+    )
+
+    const data = await result.json()
+    const product = data.data[0]
+
+    if (!product) {
+      return res.status(404).send('Product niet gevonden')
+    }
+
+    res.render('detail.liquid', { product })
+
+  } catch (error) {
+    console.log(error)
+    res.status(500).send('Server error')
+  }
+})
+
 app.get("/wishlist", async function (request, response) {
 
   const params = {

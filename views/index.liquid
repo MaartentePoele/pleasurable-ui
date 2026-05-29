@@ -52,7 +52,7 @@
       {% for product in products %}
         <li>
           <article class="product-card-home">
-            <a href="/product/{{ product.id }}" class="product-detail">
+            <a href="/detail/{{ product.slug }}" class="product-detail">
               <img
                 src="{{ product.image }}"
                 alt="{{ product.name }}"

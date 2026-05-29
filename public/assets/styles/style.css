@@ -760,3 +760,489 @@ footer {
   opacity: 0;
   pointer-events: none;
 }
+
+/* =========================
+   RESET
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background: #fffdf7;
+  color: #212121;
+  line-height: 1.5;
+}
+
+/* =========================
+   HEADER (MILLE DONI STYLE)
+========================= */
+.site-header {
+  padding: 2rem;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo img {
+  display: block;
+}
+
+/* =========================
+   NAV (MATCH MAARTEN STYLE)
+========================= */
+.main-nav {
+  margin-left: auto;
+}
+
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+.main-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  text-decoration: none;
+  color: #212121;
+
+  padding: 0.8rem 1.2rem;
+
+  border-radius: 9rem;
+  border: 1px solid #c9c9c9;
+
+  background: white;
+
+  box-shadow: 0px 2px 8px 0px rgba(0 0 0 / 15%);
+
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+.main-nav a:hover {
+  background: #f9f2d4;
+  transform: translateY(-2px);
+}
+
+.badge {
+  background: #f4c542;
+  color: #212121;
+
+  font-size: 0.75rem;
+  font-weight: bold;
+
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+}
+
+/* =========================
+   DETAIL LAYOUT
+========================= */
+.detail-page {
+  padding: 3rem 1rem;
+}
+
+.detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 900px) {
+  .detail-container {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: start;
+  }
+}
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+.product-image {
+  position: relative;
+  background: white;
+
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-shadow: 0px 2px 8px rgba(0 0 0 / 15%);
+}
+
+.product-image img {
+  width: 100%;
+  display: block;
+}
+
+/* =========================
+   ADD TO LIST (OVER IMAGE)
+========================= */
+.add-to-list {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  background: #f4c542;
+  color: #212121;
+
+  border: none;
+  border-radius: 9rem;
+
+  padding: 0.6rem 1rem;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  box-shadow: 0px 2px 8px rgba(0 0 0 / 15%);
+
+  transition: 0.2s ease;
+}
+
+.add-to-list:hover {
+  transform: scale(1.05);
+  background: #f9f2d4;
+}
+/* =====================
+   BUTTON
+===================== */
+.add-to-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  transition: 0.3s ease;
+}
+
+/* =====================
+   LOADING
+===================== */
+.add-to-list.loading {
+  background: #fff3b0;
+  color: black;
+}
+
+/* =====================
+   SUCCESS
+===================== */
+.add-to-list.success {
+  background: #28a745;
+  color: white;
+}
+
+/* =====================
+   ERROR
+===================== */
+.add-to-list.error {
+  background: #dc3545;
+  color: white;
+
+  animation: shake 0.3s ease;
+}
+
+/* =====================
+   SPINNER
+===================== */
+.loader {
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid rgba(0,0,0,0.2);
+  border-top-color: black;
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================
+   SHAKE
+===================== */
+@keyframes shake {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-4px);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
+
+  75% {
+    transform: translateX(-4px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* =====================
+   POPUP
+===================== */
+.popup {
+  position: fixed;
+
+  top: 20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  padding: 14px 24px;
+
+  border-radius: 12px;
+
+  color: white;
+  font-weight: bold;
+
+  z-index: 9999;
+
+  animation: popupSlide 3s ease forwards;
+}
+
+/* SUCCESS POPUP */
+.popup.success {
+  background: #28a745;
+}
+
+/* ERROR POPUP */
+.popup.error {
+  background: #dc3545;
+}
+
+/* =====================
+   POPUP ANIMATION
+===================== */
+@keyframes popupSlide {
+
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40px);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -40px);
+  }
+}
+/* =========================
+   PRODUCT INFO
+========================= */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.product-info h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #212121;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #466ebf;
+}
+
+.description {
+  color: #444;
+  line-height: 1.7;
+}
+
+/* =========================
+   TAGS
+========================= */
+.tags span {
+  display: inline-block;
+  background: #f9f2d4;
+  padding: 0.4rem 0.8rem;
+  border-radius: 9rem;
+  font-size: 0.85rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tag-chip {
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.tag-chip:hover {
+  background: #f5f5f5;
+}
+
+.tag-chip.active {
+  background: black;
+  color: white;
+  border-color: black;
+}
+
+/* =========================
+   EXTRA INFO
+========================= */
+.extra-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: #666;
+}
+
+/* =========================
+   SHOP BUTTON (MILLE DONI BLUE)
+========================= */
+.shop-button {
+  display: inline-block;
+
+  background: #466ebf;
+  color: white;
+
+  padding: 1rem 1.5rem;
+  border-radius: 9rem;
+
+  text-decoration: none;
+  font-weight: 700;
+
+  text-align: center;
+
+  transition: 0.25s ease;
+}
+
+.shop-button:hover {
+  background: #35559a;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   POPUP
+========================= */
+.popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+
+  color: white;
+  font-weight: bold;
+
+  z-index: 9999;
+}
+
+.popup.success {
+  background: #4caf50;
+}
+
+.popup.error {
+  background: #dc3545;
+}
+
+/* =========================
+   NEWSLETTER BAR
+========================= */
+.news-letter {
+  background-color: #466ebf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 2rem clamp(1rem, 5vw, 5rem);
+}
+
+@media (min-width: 950px) {
+  .news-letter {
+    flex-direction: row;
+    gap: 8vw;
+  }
+}
+
+.news-letter hgroup {
+  color: white;
+  width: 100%;
+}
+
+.news-letter hgroup h3,
+.news-letter hgroup p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* form */
+.news-letter form {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  max-width: 500px;
+
+  background-color: white;
+  height: 48px;
+  padding: 0 0.5rem;
+
+  border-radius: 9rem;
+  box-shadow: 0px 2px 8px rgba(0 0 0 / 15%);
+}
+
+.news-letter input {
+  width: 100%;
+  border: none;
+  outline: none;
+
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+
+.news-letter button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}

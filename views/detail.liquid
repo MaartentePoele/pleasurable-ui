@@ -1,0 +1,98 @@
+{% include 'partials/head.liquid' %}
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ product.name }} | Milledoni</title>
+
+  <link rel="stylesheet" href="/detail.css">
+  <script src="/assets/script.js" defer></script>
+</head>
+
+<body>
+
+<!-- =====================
+     DETAIL PAGINA
+===================== -->
+<main class="detail-page">
+
+  <section class="container detail-container">
+
+    <!-- PRODUCT IMAGE -->
+    <section class="product-image">
+
+      {% assign img = product.image | default: product.img %}
+
+      <img
+        src="{{ img }}"
+        alt="{{ product.name }}"
+        width="600"
+        height="600"
+        loading="eager"
+      >
+
+      <!-- ADD TO LIST (GEFIXT) -->
+      <form class="add-to-list-form">
+
+        <input type="hidden" name="product_id" value="{{ product.id }}">
+
+        <button type="submit" class="add-to-list">
+          + Add to list
+        </button>
+
+      </form>
+
+    </section>
+
+    <!-- PRODUCT INFO -->
+    <section class="product-info">
+
+      <h1>{{ product.name }}</h1>
+
+      <p class="price">
+        € {{ product.amount }}
+      </p>
+
+      <p class="description">
+        {{ product.description }}
+      </p>
+
+      <section class="tags">
+        <h3>Tags</h3>
+
+        <div class="tag-list">
+          {% assign tags = product.tags | split: "," %}
+
+          {% for tag in tags %}
+            <button class="tag-chip" data-tag="{{ tag | strip }}">
+              {{ tag | strip }}
+            </button>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="extra-info">
+        <p><strong>Shop:</strong> {{ product.shop_name }}</p>
+        <p><strong>Gespot door:</strong> {{ product.spotter }}</p>
+      </section>
+
+      <section class="actions">
+        <a
+          href="{{ product.shop_url }}"
+          target="_blank"
+          class="shop-button"
+        >
+          Bekijk in winkel
+        </a>
+      </section>
+
+    </section>
+
+  </section>
+
+</main>
+
+</body>
+</html>
+{% include 'partials/foot.liquid' %}
