@@ -3,7 +3,126 @@
 
 
 
+ <div class="slider">
+
+  <!-- states -->
+
+  <input type="radio" name="step" id="step1" checked>
+  <input type="radio" name="step" id="step2">
+  <input type="radio" name="step" id="step3">
+  <input type="radio" name="step" id="step4">
+  <input type="radio" name="step" id="step5">
+  <input type="radio" name="step" id="step6">
+  <input type="radio" name="step" id="step7">
+  <input type="radio" name="step" id="step8">
+
+  <!-- circles -->
+
+  <label for="step1" class="circle">
+    <img src="/assets/images/cadeau_lijst.png" alt="">
+  </label>
+
+  <label for="step2" class="circle">
+    <img src="/assets/images/cadeau_lijst.png" alt="">
+  </label>
+
+  <label for="step3" class="circle">
+    <img src="/assets/images/cadeau_lijst.png" alt="">
+  </label>
+
+  <label for="step4" class="circle">
+    <img src="/assets/images/cadeau_lijst.png" alt="">
+  </label>
+
+  <label for="step5" class="circle">
+    <img src="/assets/images/cadeau_lijst.png" alt="">
+  </label>
+
+  <label for="step6" class="circle">
+    <img src="/assets/images/cadeau_lijst.png" alt="">
+  </label>
+
+  <label for="step7" class="circle">
+    <img src="/assets/images/cadeau_lijst.png" alt="">
+  </label>
+
+  <label for="step8" class="circle">
+    <img src="/assets/images/cadeau_lijst.png" alt="">
+  </label>
+
+  <!-- mobile next buttons -->
+
+  <label for="step2" class="next next-1">→</label>
+  <label for="step3" class="next next-2">→</label>
+  <label for="step4" class="next next-3">→</label>
+  <label for="step5" class="next next-4">→</label>
+  <label for="step6" class="next next-5">→</label>
+  <label for="step7" class="next next-6">→</label>
+  <label for="step8" class="next next-7">→</label>
+  <label for="step1" class="next next-8">→</label>
+
+</div>
 
 
+<div class="ribbon">
+  <img src="/assets/images/strikje.svg">
+</div>
 
+<div class="feedback-popup hidden">
+  <p>Verwijderd uit je lijst</p>
+</div>
+
+
+{% if likedProducts.size > 0 %}
+
+  <main class="grid_likedproducts">
+
+    {% for product in likedProducts %}
+
+      <article class="opgeslagen-product">
+
+        <img src="{{ product.image }}" alt="{{ product.name }}">
+
+        <h2>{{ product.name }}</h2>
+
+        <p>{{ product.amount }}</p>
+
+
+        <form method="post" action="/verwijder" class="like-form">
+
+          <input type="hidden" name="id" value="{{ product.id }}">
+
+          <button type="submit" class="lijst-button">
+
+            verwijder
+
+         
+
+          </button>
+
+        </form>
+
+      </article>
+
+    {% endfor %}
+
+
+{% else %}
+
+  <section class="empty-state">
+
+    <img
+      src="/assets/images/empty-state.png"
+      alt="Nog geen opgeslagen producten"
+    >
+
+    <h2>Je lijst is nog leeg</h2>
+
+    <p>Sla producten op om ze later terug te vinden.</p>
+
+  </section>
+
+{% endif %}
+
+  </main>
 {% include 'partials/foot.liquid' %}

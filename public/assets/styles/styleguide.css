@@ -1,0 +1,41 @@
+/* PARKINSANS LIGHT */
+@font-face {
+    font-family: 'Parkinsans';
+    src: url('/assets/fonts/Parkinsans-Light.ttf');
+    font-weight: 300;
+}
+
+/* PARKINSANS REGULAR */
+@font-face {
+    font-family: 'Parkinsans';
+    src: url('/assets/fonts/Parkinsans-Regular.ttf');
+    font-weight: 400;
+}
+
+/* PARKINSANS MEDIUM */
+@font-face {
+    font-family: 'Parkinsans';
+    src: url('/assets/fonts/Parkinsans-Medium.ttf');
+    font-weight: 500;
+}
+
+/* PARKINSANS SEMIBOLD */
+@font-face {
+    font-family: 'Parkinsans';
+    src: url('/assets/fonts/Parkinsans-SemiBold.ttf');
+    font-weight: 600;
+}
+
+/* PARKINSANS BOLD */
+@font-face {
+    font-family: 'Parkinsans';
+    src: url('/assets/fonts/Parkinsans-Bold.ttf');
+    font-weight: 700;
+}
+
+/* PARKINSANS EXTRABOLD */
+@font-face {
+    font-family: 'Parkinsans';
+    src: url('/assets/fonts/Parkinsans-ExtraBold.ttf');
+    font-weight: 800;
+}

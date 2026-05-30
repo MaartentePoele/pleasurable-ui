@@ -22,6 +22,29 @@ Milledoni Figma vind je in: [Milledoni](https://www.figma.com/design/tHCHwBm3Ujv
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
 
+
+## wishlist pagina
+de wishlist is de pagina waar alle opgeslagen caduas die op de home pagina opgeslagen worden en naar de wishlist stuurde. Op de wishlist zelf heb je gelijk aan de boven een galerij waar je door verschillende lijstjes heen kan klikken die je ezelf hebt gemaakt. 
+
+**de lijstjes**
+
+Voor het ontwerp heb ik gekozen voor zachte ronde bolletjes die niet te veel opvallen.
+De focus ligt op een rustige en minimalistische uitstraling waarbij de actieve optie duidelijk groter wordt weergegeven.
+
+<br>
+
+<img width="885" height="146" alt="image" src="https://github.com/user-attachments/assets/ffe9d6c9-b63c-48a0-8dd4-d19046bb0987" />
+
+**De ribbon**
+
+ik heb op de site ook een lange streep hij onderscheidt de products en galerij maar hij blijft wel in het thema van milledoni
+
+**De product kaartjes**
+de product kaarttjes zelf zit een lichte scahduw achter het heeft geen border wat aansluit van de product kaartjes op de home pagina. De layout is een grid wat ongelijk is wat een speels ontwerp geeft iet swat de opdrachtgever ook aangafee
+
+
+
+
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
 

@@ -1,2 +1,97 @@
 {% include 'partials/head.liquid' %}
+<main>
+  <div class="chatbot-section-wrapper">
+    <h1>Ik ben op zoek naar een cadeau voor... <span>mijn oom</span></h1>
+
+    <div class="search-wrapper">
+      <img class="mic-icon" src="/assets/images/microphone.svg" alt="" width="25" height="25" loading="lazy">
+      <input type="search" placeholder="Ik ben op zoek naar een cadeau voor Maria" name="search">
+      <img class="search-icon" src="/assets/images/search-icon.svg" alt="" width="55" height="60" loading="lazy">
+    </div>
+  </div>
+
+  <div class="main-content-wrapper">
+    <img src="/assets/images/bow.svg" class="bow" alt="" width="400" height="300" loading="lazy">
+
+    <div class="h2-filter-wrapper">
+      <h2>Laat je inspireren door de wereld van Milledoni</h2>
+
+      <button type="button" popovertarget="filter-popover" class="filter-button">
+        <img src="assets/images/filter-icon.svg" alt="Filter openen" width="25" height="25" loading="lazy">
+        <span class="filter-span">Filter</span>
+      </button>
+    </div>
+
+    <form
+      id="filter-popover"
+      popover
+      method="GET"
+      action="/"
+      class=" "
+    >
+      <button type="button" popovertarget="filter-popover" popovertargetaction="hide">
+        <img src="assets/images/close-icon.svg" alt="Filter sluiten" width="25" height="25" loading="lazy">
+      </button>
+
+      <h3>Filters aanpassen</h3>
+
+      <div class="filter-category-example">
+        <label for="price-min">Min prijs:</label>
+        <input type="number" id="price-min" name="min">
+      </div>
+
+      <div class="filter-category-example">
+        <label for="price-max">Max prijs:</label>
+        <input type="number" id="price-max" name="max">
+      </div>
+
+      <button type="submit">Toepassen</button>
+    </form>
+
+    <ul class="products">
+      {% for product in products %}
+        <li>
+          <article class="product-card-home">
+            <a href="/product/{{ product.id }}" class="product-detail">
+              <img
+                src="{{ product.image }}"
+                alt="{{ product.name }}"
+                width="300"
+                height="300"
+                loading="lazy"
+              >
+
+              <form method="POST" action="/save-product">
+                <input type="hidden" name="product-id" value="{{ product.id }}">
+
+                <button type="submit" class="add-product">
+                  <img
+                    src="/assets/images/add-to-list-icon.svg"
+                    alt="Voeg {{ product.name }} toe aan lijst"
+                    width="25"
+                    height="25"
+                    loading="lazy"
+                  >
+                </button>
+              </form>
+
+              <div class="product-card-info">
+                <h3>
+                  <span>{{ product.name }}</span>
+                </h3>
+
+                <p class="price-tag">€ {{ product.amount }}</p>
+
+                <p class="see-more-of-product">
+                  Lees meer over cadeau
+                  <span class="arrow-icon"></span>
+                </p>
+              </div>
+            </a>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</main>
 {% include 'partials/foot.liquid' %}
