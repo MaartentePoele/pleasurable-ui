@@ -45,14 +45,44 @@ app.get("/", async function (request, response) {
   // Alleen de lijst met producten uit API
   const productData = productResponseJSON.data;
 
+
+  const userResponse = await fetch(
+    'https://fdnd-agency.directus.app/items/milledoni_users/63?fields=*.*'
+  )
+
+  const userData = await userResponse.json()
+  const likedCount = userData.data.liked_products.length
+
   response.render("index.liquid", {
     products: productData,
+    likedCount: likedCount,
+    status: request.query.status
   });
 });
 
 // HOME/CADEAU-OVERZICHT PRODUCT OPSLAAN
-app.post("/save-product", async function (request, response) {
-  response.redirect("/");
+  app.post("/save-product", async function (request, response) {
+  if (!request.body.productId) {
+    return response.redirect(303, "/")
+  }
+ 
+  await fetch(
+    "https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1",
+    {
+      method: "POST",
+ 
+      body: JSON.stringify({
+        milledoni_users_id: 63,
+        milledoni_products_id: request.body.productId,
+      }),
+ 
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+    },
+  );
+ 
+  response.redirect(303, "/?status=success");
 });
 
 app.get("/blog", async function (request, response) {
@@ -64,19 +94,18 @@ app.get("/cadeau-overzicht", async function (request, response) {
 });
 
 app.get("/wishlist", async function (request, response) {
-
   const params = {
     fields:
       "liked_products.milledoni_products_id.id," +
       "liked_products.milledoni_products_id.name," +
       "liked_products.milledoni_products_id.image," +
-      "liked_products.milledoni_products_id.amount"
+      "liked_products.milledoni_products_id.amount",
   };
 
   // fetch gebruiker 63 inclusief opgeslagen producten
   const productResponse = await fetch(
     "https://fdnd-agency.directus.app/items/milledoni_users/63/?" +
-    new URLSearchParams(params)
+      new URLSearchParams(params),
   );
 
   // zet response om naar JSON
@@ -84,42 +113,41 @@ app.get("/wishlist", async function (request, response) {
 
   // pak alleen de product data uit de koppeling
   const likedProducts = productResponseJSON.data.liked_products
-    .filter(item => item.milledoni_products_id !== null)
-    .map(item => item.milledoni_products_id);
+    .filter((item) => item.milledoni_products_id !== null)
+    .map((item) => item.milledoni_products_id);
 
   // stuur producten door naar de liquid pagina
   response.render("wishlist.liquid", {
     likedProducts: likedProducts,
   });
-
 });
 
 app.post("/verwijder", async function (request, response) {
   const productId = request.body.id;
 
-  console.log("PRODUCT ID:", productId)
+  console.log("PRODUCT ID:", productId);
 
   if (!productId) {
-    console.log("Geen product id ontvangen")
+    console.log("Geen product id ontvangen");
     return response.redirect(303, "/wishlist");
   }
 
   const relationResponse = await fetch(
-    `https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1?filter[milledoni_users_id][_eq]=63&filter[milledoni_products_id][_eq]=${productId}&fields=id&limit=1`
+    `https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1?filter[milledoni_users_id][_eq]=63&filter[milledoni_products_id][_eq]=${productId}&fields=id&limit=1`,
   );
 
   const relationJSON = await relationResponse.json();
 
-  console.log("RELATION RESPONSE:", relationJSON)
+  console.log("RELATION RESPONSE:", relationJSON);
 
   if (!relationJSON.data?.length) {
-    console.log("Geen koppeling gevonden")
+    console.log("Geen koppeling gevonden");
     return response.redirect(303, "/wishlist");
   }
 
   const relationId = relationJSON.data[0].id;
 
-  console.log("RELATION ID:", relationId)
+  console.log("RELATION ID:", relationId);
 
   const deleteResponse = await fetch(
     `https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1/${relationId}`,
@@ -128,21 +156,22 @@ app.post("/verwijder", async function (request, response) {
       headers: {
         "Content-Type": "application/json;charset=UTF-8",
       },
-    }
+    },
   );
 
-  console.log("DELETE STATUS:", deleteResponse.status)
+  console.log("DELETE STATUS:", deleteResponse.status);
 
   response.redirect(303, "/wishlist");
 });
 
-app.get("/spotters", async function (request, response){
-  const params ={
-    fields: '*'
-  }
-  const spottersResponse = await fetch ( 'https://fdnd-agency.directus.app/items/milledoni_spotters?'
-    + new URLSearchParams(params)
-  )
+app.get("/spotters", async function (request, response) {
+  const params = {
+    fields: "*",
+  };
+  const spottersResponse = await fetch(
+    "https://fdnd-agency.directus.app/items/milledoni_spotters?" +
+      new URLSearchParams(params),
+  );
   const spottersResponseJson = await spottersResponse.json();
   response.render("spotters.liquid",{
       spotters: spottersResponseJson.data,
@@ -151,27 +180,32 @@ app.get("/spotters", async function (request, response){
 })
 });
 
-app.post("/spotters", async function (request, response){
-  const newSpotter = { //maak ik newspotter object aan, met de data name, photo etc//
+app.post("/spotters", async function (request, response) {
+  const newSpotter = {
+    //maak ik newspotter object aan, met de data name, photo etc//
     name: request.body.name,
     photo: request.body.photo,
     description: request.body.description,
-    interested_in: request.body.interested_in
+    interested_in: request.body.interested_in,
   };
   response.redirect("/spotters?status=succes")
 });
 
-  await fetch( // hier maak ik een POST request naar de API, met als body het newspotter object//
+  await fetch(
+    // hier maak ik een POST request naar de API, met als body het newspotter object//
     "https://fdnd-agency.directus.app/items/milledoni_spotters",
     {
       method: "POST",
-      headers: {// hier geef ik aan dat de body van mijn request JSON is//
-        "Content-Type": "application/json"
+      headers: {
+        // hier geef ik aan dat de body van mijn request JSON is//
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(newSpotter)// hier zet ik newspotter object om naar json//
-    }
+      body: JSON.stringify(newSpotter), // hier zet ik newspotter object om naar json//
+    },
   );
 
+  response.redirect("/spotters");
+});
 
 app.get("/gifts/:tags", async function (req, res) {
   const params = {
