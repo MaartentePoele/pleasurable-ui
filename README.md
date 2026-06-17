@@ -31,7 +31,7 @@ Bij het ontwerpen van deze pagina heb ik geprobeerd om minder een webshop gevoel
 ### detailpagina
 <img width="959" height="476" alt="image" src="https://github.com/user-attachments/assets/746c57f9-a267-413f-95fe-7a7be3c0ed01" />
 
-De detailpagina is de pagina waar in je de info van de cadeau te zien krijg en als je op de add to list knopje druk dan krijg je het in je wishlistje tabje via een fly animatie en dan krijg je een popup te zien waar er staat dat je cadeau is add to list
+De detailpagina is de pagina waar in je de info van de cadeau te zien krijg en als je op de add to list knopje druk dan krijg je het in je wishlistje tabje via een fly animatie en dan krijg je een popup te zien waar er staat dat je cadeau is add to list en ik heb het zo gedaan om er tevoor zorgen dat het duidelijk is voor mensen om te kunnen zien wat er gebeurt.
 
 
 ### De lijstjes
