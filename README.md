@@ -28,6 +28,12 @@ De wishlist pagina is de plek waar alle opgeslagen cadeaus worden weergegeven. W
 
 Bij het ontwerpen van deze pagina heb ik geprobeerd om minder een webshop gevoel te creëren en meer een inspiratie pagina te maken. Daarom heb ik gekeken naar websites zoals Pinterest waar de focus ligt op ontdekken en inspiratie opdoen.
 
+### detailpagina
+<img width="959" height="476" alt="image" src="https://github.com/user-attachments/assets/746c57f9-a267-413f-95fe-7a7be3c0ed01" />
+
+De detailpagina is de pagina waar in je de info van de cadeau te zien krijg en als je op de add to list knopje druk dan krijg je het in je wishlistje tabje via een fly animatie en dan krijg je een popup te zien waar er staat dat je cadeau is add to list
+
+
 ### De lijstjes
 
 Bovenaan de pagina staat een galerij met verschillende lijstjes. Hier kan de gebruiker tussen zijn eigen lijstjes wisselen. Ook heb ik rekening gehouden met het bekijken van lijstjes van andere gebruikers zodat bezoekers inspiratie kunnen halen uit cadeau ideeën van anderen.
