@@ -236,6 +236,8 @@ footer {
   }
 }
 /* blog pagina */
+
+
 .blog{
   min-height: 100vh;
   display: flex;
@@ -347,64 +349,66 @@ footer {
   
     padding: 15px 15px 15px 15px;
     border-radius: 30px;
-  
   }
 }
-#comment-popover{
-  width: 425px;
-  height: 320px;
 
-  border: none;
-  border-radius: 20px;
-  
-  background-color: #F6F5F5;
-  box-shadow: 2px 5px 2px #D9D9D9;
-  
-  position-area: bottom;
-
-  position-anchor: --comment-btn;
-  margin-top: 8px;
-
-  label[for="comment"]{
-    position: relative;
-    left: 10px;
-    bottom: 7px;
-    font-size: 17px;
+@supports selector(:popover-open){
+  #comment-popover{
+    width: 425px;
+    height: 320px;
+    
+    border: none;
+    border-radius: 20px;
+    
+    background-color: #F6F5F5;
+    box-shadow: 2px 5px 2px #D9D9D9;
+    
+    position-area: bottom;
+    
+    position-anchor: --comment-btn;
+    margin-top: 8px;
+    
+    label[for="comment"]{
+      position: relative;
+      left: 10px;
+      bottom: 7px;
+      font-size: 17px;
+    }
+  }
+  textarea{
+    resize: none;
+    padding: 10px;
+    height: 200px;
   }
 }
-textarea{
-  resize: none;
-  padding: 10px;
-  height: 200px;
-}
+  form.blog-comment{
+    margin-top: 15px;
 
-form.blog-comment{
-  margin-top: 15px;
-}
-.blog-comment{
-  display: flex;
-  flex-direction: column;
-  padding: 10px 10px 10px 10px;
-  column-gap: 10px;
-}
-#comment{
-  border-radius: 30px;
-}
-.submit-btn{
-  width: 90px;
-  background-color: #E2B100;
-  border: #c9c9c9 solid 1px;
-  border-radius: 10px;
-  padding: 8px;
-  margin-top: 15px;
-  margin-left: auto;
-  transition: 1s;
-
-  &:hover{
-    transform: scale(1.1);
   }
-}
-/* detail pagina blog */
+  .blog-comment{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 10px 10px;
+    column-gap: 10px;
+  }
+  #comment{
+    border-radius: 30px;
+  }
+  .submit-btn{
+    width: 90px;
+    background-color: #E2B100;
+    border: #c9c9c9 solid 1px;
+    border-radius: 10px;
+    padding: 8px;
+    margin-top: 15px;
+    margin-left: auto;
+    transition: 1s;
+  
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+
 .section-blog-detail-article{
   margin: 10px;
 }
