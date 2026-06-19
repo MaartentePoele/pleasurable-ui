@@ -1,0 +1,58 @@
+{% include 'partials/head.liquid' %}
+
+<img class="strikje" src="/assets/images/strikje.png">
+<div class="container">
+<h1>De cadeauspotters community</h1>
+<p class="intro-spotters">Op Milledoni spot de redactie samen met een groep gepassioneerde cadeauspotters cadeaus die je echt wilt geven of ontvangen. 
+    Spotters dragen niet alleen zelf cadeauideeën aan,
+     maar reviewen en testen ook cadeaus die op Milledoni staan.
+      Zo is de kwaliteit van de cadeaus gegarandeerd. 
+      Spotters zijn zowel mensen die het echt leuk vinden om cadeaus te vinden, 
+      als experts op een bepaald gebied, zoals fashion, gadgets, food of cultuur. 
+    De meeste van de spotters zijn ook bloggers of journalisten.</p>
+{% comment %} <img src="/assets/images/spotter-icon.png"> {% endcomment %}
+
+<h2 class="titel">Meld je aan als Cadeauspotter!</h2>
+<p class="meldaan-tekst">Zie jij altijd overal leuke cadeaus, 
+    en zou je deze het liefst meteen kopen,
+     inpakken en weggeven?
+      Vragen mensen jou regelmatig om cadeauadvies? 
+      Word cadeauspotter.
+</p>
+<button class="aanmeld-knop" id="popup-knop"> Aanmelden</button>
+
+
+<div class="popup-aanmelden" id="popup-melden">
+<form method="POST" action="/spotters">
+                  <label for="name">Naam</label>
+                  <input type="text" id="name" name="name" placeholder="name" required/>
+{% comment %} 
+                  <label for="photo">Foto</label>
+                  <input type="text" id="photo" name="photo"/> {% endcomment %}
+
+                  <label for="interested_in">Interesses</label>
+                  <input type="text" id="interested_in" name="interested_in"/>
+
+                  <label for="description">Beschrijving</label>
+                  <input type="text" id="description" name="description"/>
+                  <button type="submit" class="opslaan-knop" aria-label="maak spotter aan">
+                    Aanmelden
+                  </button>
+                </form>
+</div>
+</div>
+    <h2 class="spotters-titel">De Milledoni Spotters!</h2>
+    <ul class="container-spotters">
+{% for spotter in spotters %}
+    <li class="spotter-aangemeld">
+        {%if spotter.photo%}
+            <img src="https://fdnd-agency.directus.app/assets/{{ spotter.photo }}">
+            {%else%}
+            <img class="placeholder" src="/assets/images/spotter-icon.png">
+        {%endif%}
+        <h3 class="spotter-naam">{{ spotter.name }}</h3>
+        <p>{{ spotter.interested_in}}</p>
+    </li>
+{% endfor %}
+    </ul>
+{% include 'partials/foot.liquid' %}
