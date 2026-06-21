@@ -77,7 +77,18 @@ De popup werkt volledig aan de client side waardoor de feedback direct zichtbaar
 In onderstaande issue heb ik dit onderdeel verder uitgewerkt : https://github.com/MaartentePoele/pleasurable-ui/issues/46
 
 
+# Spotters pagina:
+- Spotters zijn mensen die een cadeau hebben gevonden en dit kunnen toevoegen aan de website, zodat anderen het cadeau kunnen bekijken en zo dus inspiratie kunnen opdoen. Op de spotterspagina kun je je aanmelden als spotter. Bovenaan de pagina staat een korte uitleg over wat het spotterschap inhoudt. Onderaan zie je een overzicht van de mensen die zich al als spotter hebben aangemeld.## Mobile design
+<img width="113" height="290" alt="image" src="https://github.com/user-attachments/assets/1add014c-f1c5-46a4-b774-dd1299dbaa12" />
 
+## Desktop design
+<img width="259" height="253" alt="image" src="https://github.com/user-attachments/assets/763a23c5-253a-47e9-a269-1f59706c5727" />
+
+## Form
+<img width="262" height="254" alt="image" src="https://github.com/user-attachments/assets/820fe289-f78f-4322-9679-e416e4666131" />
+- Wanneer je op de aanmeldknop klikt, verschijnt er een formulier waarmee een spotter zich kan aanmelden. Na het invullen en verzenden van het formulier worden de nieuwe spotter en de ingevulde gegevens direct toegevoegd aan de spotterslijst onderaan de pagina.
+## Succes state
+<img width="258" height="257" alt="image" src="https://github.com/user-attachments/assets/9cd093ab-a4ca-4e2c-8f04-b431dd01a9ab" />
 
 
 
