@@ -1,9 +1,20 @@
 {% include 'partials/head.liquid' %}
 
+{% if status == "succes" %}    
+<div class="succes">
+    Je bent succesvol aangemeld als spotter!
+</div>
+{% endif %}
+
+<picture>
+    <source srcset="/assets/images/strikje.avif" type="image/avif">
+    <source srcset="/assets/images/strikje.webp" type="image/webp">
 <img class="strikje" src="/assets/images/strikje.png">
+</picture>
+
 <div class="container">
 <h1>De cadeauspotters community</h1>
-<p class="intro-spotters">Op Milledoni spot de redactie samen met een groep gepassioneerde cadeauspotters cadeaus die je echt wilt geven of ontvangen. 
+<p class="beschrijving-spotters">Op Milledoni spot de redactie samen met een groep gepassioneerde cadeauspotters cadeaus die je echt wilt geven of ontvangen. 
     Spotters dragen niet alleen zelf cadeauideeën aan,
      maar reviewen en testen ook cadeaus die op Milledoni staan.
       Zo is de kwaliteit van de cadeaus gegarandeerd. 
@@ -41,6 +52,8 @@
                 </form>
 </div>
 </div>
+
+
     <h2 class="spotters-titel">De Milledoni Spotters!</h2>
     <ul class="container-spotters">
 {% for spotter in spotters %}
@@ -48,7 +61,13 @@
         {%if spotter.photo%}
             <img src="https://fdnd-agency.directus.app/assets/{{ spotter.photo }}">
             {%else%}
+
+            <picture>
+                <source srcset="/assets/images/spotter-icon.avif" type="image/avif">
+                <source srcset="/assets/images/spotter-icon.webp" type="image/webp"
             <img class="placeholder" src="/assets/images/spotter-icon.png">
+            </picture>
+
         {%endif%}
         <h3 class="spotter-naam">{{ spotter.name }}</h3>
         <p>{{ spotter.interested_in}}</p>

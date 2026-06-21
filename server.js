@@ -185,9 +185,11 @@ app.get("/spotters", async function (request, response) {
       new URLSearchParams(params),
   );
   const spottersResponseJson = await spottersResponse.json();
-  response.render("spotters.liquid", {
-    spotters: spottersResponseJson.data,
-  });
+  response.render("spotters.liquid",{
+      spotters: spottersResponseJson.data,
+      status: request.query.status
+
+})
 });
 
 app.post("/spotters", async function (request, response) {
@@ -198,6 +200,8 @@ app.post("/spotters", async function (request, response) {
     description: request.body.description,
     interested_in: request.body.interested_in,
   };
+  response.redirect("/spotters?status=succes")
+});
 
   await fetch(
     // hier maak ik een POST request naar de API, met als body het newspotter object//
@@ -231,6 +235,24 @@ app.get("/gifts/:tags", async function (req, res) {
     products: productResponseJSON.data,
   });
 });
+
+app.get("/gifts/:tags", async function (req, res) {
+  const params = {
+    fields: "name,image,amount,slug,id,tags",
+    "filter[tags][_contains]": req.params.tags,
+  };
+
+  const productResponse = await fetch(
+    "https://fdnd-agency.directus.app/items/milledoni_products/?" +
+      new URLSearchParams(params),
+  );
+  const productResponseJSON = await productResponse.json();
+
+  res.render("index.liquid", {
+    products: productResponseJSON.data,
+  });
+});
+
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
 app.set("port", process.env.PORT || 8000);
