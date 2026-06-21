@@ -93,7 +93,7 @@ In onderstaande issue heb ik dit onderdeel verder uitgewerkt : https://github.co
 
 <!-- Khiam -->
 ## Blog pagina
-Milledoni wilde een nieuwe blogpagina die beter aansloot bij de moderne uitstraling van het platform. Geïnspireerd door de stijl van Poosh heb ik een responsive blogervaring ontworpen met een overzichtspagina en blogdetailpagina. De focus lag op storytelling en een rustige, elegante presentatie van content. In mijn [issue](https://github.com/MaartentePoele/pleasurable-ui/issues/4) heb ik meer verwerkt
+Milledoni wilde een nieuwe [blogpagina](https://pleasurable-ui-ax57.onrender.com/blog) die beter aansloot bij de moderne uitstraling van het platform. Geïnspireerd door de stijl van Poosh heb ik een responsive blogervaring ontworpen met een overzichtspagina en blogdetailpagina. De focus lag op storytelling en een rustige, elegante presentatie van content. In mijn [issue](https://github.com/MaartentePoele/pleasurable-ui/issues/4) heb ik meer verwerkt
 
 <img width="153" height="434" alt="Scherm­afbeelding 2026-06-21 om 10 33 30" src="https://github.com/user-attachments/assets/6bc9a090-7028-46d3-8a51-b6c4f1ec192f" />
 
