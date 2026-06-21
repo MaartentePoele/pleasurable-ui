@@ -91,6 +91,26 @@ In onderstaande issue heb ik dit onderdeel verder uitgewerkt : https://github.co
 <img width="258" height="257" alt="image" src="https://github.com/user-attachments/assets/9cd093ab-a4ca-4e2c-8f04-b431dd01a9ab" />
 
 
+<!-- Khiam -->
+## Blog pagina
+Milledoni wilde een nieuwe blogpagina die beter aansloot bij de moderne uitstraling van het platform. Geïnspireerd door de stijl van Poosh heb ik een responsive blogervaring ontworpen met een overzichtspagina en blogdetailpagina. De focus lag op storytelling en een rustige, elegante presentatie van content. In mijn [issue](https://github.com/MaartentePoele/pleasurable-ui/issues/4) heb ik meer verwerkt
+
+<img width="153" height="434" alt="Scherm­afbeelding 2026-06-21 om 10 33 30" src="https://github.com/user-attachments/assets/6bc9a090-7028-46d3-8a51-b6c4f1ec192f" />
+
+
+### Detail pagina 
+De blog-detailpagina toont het volledige artikel dat de gebruiker heeft aangeklikt. De focus ligt op leesbaarheid en gebruiksgemak, met een overzichtelijke opmaak, ondersteunende afbeeldingen, een reactieformulier en aanbevelingen voor gerelateerde cadeaus. Hierdoor kunnen bezoekers eenvoudig meer inspiratie opdoen binnen het platform.
+
+<img width="153" height="777" alt="Scherm­afbeelding 2026-06-21 om 10 34 06" src="https://github.com/user-attachments/assets/40534312-39ad-40f2-86ed-1c64d3538adf" />
+
+### pop-up 
+
+Via een knop onderaan de blogpagina wordt een pop-up geopend met een reactieformulier. Met behulp van `@supports selector(:popover-open)` controleer ik of de browser de functionaliteit ondersteunt voordat de styling wordt toegepast.
+
+<img width="643" height="281" alt="Scherm­afbeelding 2026-06-21 om 11 08 22" src="https://github.com/user-attachments/assets/ad23a717-4a09-4e85-90ea-265eb596d785" />
+
+
+
 
 
 
