@@ -18,9 +18,50 @@ Milledoni Figma vind je in: [Milledoni](https://www.figma.com/design/tHCHwBm3Ujv
   * [Licentie](#licentie)
 
 ## Beschrijving
-<!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+Voor deze sprint hebben wij samen gewerkt aan een interface voor Milledoni. Het doel was om een gebruiksvriendelijke en aantrekkelijke ervaring te ontwerpen waar gebruikers blij van worden.
+
+<img width="1284" height="688" alt="Screenshot 2026-06-21 at 18 02 02" src="https://github.com/user-attachments/assets/988a8ab2-1bce-4f5d-b70e-0b90069a2dfc" />
+
+
+Link naar Github Pages: https://pleasurable-ui-ax57.onrender.com/
+
+## Responsive ontwerp
+### Mobile
+
+Op mobiel staat de chatbot-sectie bovenaan de pagina, gevolgd door het productoverzicht. Hierdoor kan de gebruiker eenvoudig door de producten scrollen.
+
+<img width="194" height="423" alt="Screenshot 2026-06-21 at 18 03 03" src="https://github.com/user-attachments/assets/ec8044d8-695a-4997-9c0e-6999d8ebc579" />
+
+### Desktop
+
+Op grotere schermen verandert de layout naar twee kolommen. De chatbot-sectie blijft links zichtbaar, terwijl de producten rechts worden weergegeven. Hierdoor blijft de zoek- en inspiratiefunctionaliteit altijd binnen bereik.
+
+<img width="796" height="702" alt="Screenshot 2026-06-21 at 18 02 35" src="https://github.com/user-attachments/assets/954bd2f2-b548-4f82-9ebf-bb4908c4745d" />
+
+https://github.com/MaartentePoele/pleasurable-ui/blob/be7831a43576b6932237c068a58b7e876276a145/public/assets/styles/style.css#L325-L328
+
+https://github.com/MaartentePoele/pleasurable-ui/blob/be7831a43576b6932237c068a58b7e876276a145/public/assets/styles/style.css#L351-L355
+
+
+### Feedback bij interacties
+
+Gebruikers krijgen directe feedback wanneer een product wordt toegevoegd aan hun lijst. Na het opslaan verschijnt een succesmelding bovenaan het scherm.
+
+<img width="1151" height="393" alt="Screenshot 2026-06-21 at 23 25 10" src="https://github.com/user-attachments/assets/edfa2d53-969d-4d1e-9b64-e5b12bd4cc2c" />
+
+https://github.com/MaartentePoele/pleasurable-ui/blob/be7831a43576b6932237c068a58b7e876276a145/views/index.liquid#L3-L8
+
+### Toegankelijkheid & Performance
+
+Voor een betere gebruikerservaring:
+
+- Alt-teksten toegevoegd aan afbeeldingen.
+- Lazy loading gebruikt voor afbeeldingen.
+- Rekening gehouden met gebruikers die minder animaties willen via prefers-reduced-motion.
+
+https://github.com/MaartentePoele/pleasurable-ui/blob/be7831a43576b6932237c068a58b7e876276a145/views/index.liquid#L65-L70
+
+https://github.com/MaartentePoele/pleasurable-ui/blob/be7831a43576b6932237c068a58b7e876276a145/public/assets/styles/style.css#L508-L512
 
 ## Wishlist pagina
 
