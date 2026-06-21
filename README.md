@@ -85,7 +85,7 @@ In onderstaande issue heb ik dit onderdeel verder uitgewerkt : https://github.co
 <img width="259" height="253" alt="image" src="https://github.com/user-attachments/assets/763a23c5-253a-47e9-a269-1f59706c5727" />
 
 ## Form
-<img width="262" height="254" alt="image" src="https://github.com/user-attachments/assets/820fe289-f78f-4322-9679-e416e4666131" />
+<img width="262" height="254" alt="image" src="https://github.com/user-attachments/assets/820fe289-f78f-4322-9679-e416e4666131" /><br>
 - Wanneer je op de aanmeldknop klikt, verschijnt er een formulier waarmee een spotter zich kan aanmelden. Na het invullen en verzenden van het formulier worden de nieuwe spotter en de ingevulde gegevens direct toegevoegd aan de spotterslijst onderaan de pagina.
 ## Succes state
 <img width="258" height="257" alt="image" src="https://github.com/user-attachments/assets/9cd093ab-a4ca-4e2c-8f04-b431dd01a9ab" />
